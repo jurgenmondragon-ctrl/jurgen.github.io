@@ -18,8 +18,8 @@
 <form>
 <label for="fname">First name:</label>
 <input type="text"id="fname"value="John">
-<label for="mname">Middle name:</label>
-<input type="text"id="mname"value="Iron">
+<label for="mname">Middle Initial:</label>
+<input type="text"id="minitial"value="I">
 <label for="lname">Last name:</label>
 <input type="text"id="lname"value="Marston">
 <input type="submit"value="Submit">
