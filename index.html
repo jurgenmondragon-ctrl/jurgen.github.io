@@ -14,56 +14,61 @@
       <link href ="style.css" rel="stylesheet">
 
       <!-- displays text in the browser's tab-->
-      <title>This is a Medical Registration Page</title>
+      <title>Medical Registration</title>
     </head>
     <body>
         <header>
              <table width="100%'>
                  <tr> 
                     <td valign="top" align="left" width="20%"> 
+                         <div class="image">
+                               <img align="center" src="caduceus.png" alt="caducues" width="70px" id="logo"/>
+                         </div> 
                     <!--  image vid min 3:08-->
                     </td>
   
                    <td>
-                     
+                     <h2>Silverlake Health Clinic</h2>
                    </td>
     
                    <td>
-                     
+                     <td valign="bottom" align="right" width="20">
+                       Today's Date:<span id="today"></span>
                    </td>
                  </tr>
              </table>
          </header>
 <hr>
 <!-- Form starts here -->
-<!-- form action="thanyou.hmtl"-->
-    <form>
+<form action="thanyou.hmtl">
       <center>
          <div class="format">
           <table>
             <tr>
-              <th colspan="4"> Create Patient Portal Account</th>
+              <th colspan="4"> Client Information</th>
             </tr>
             <!--patient's information section of form starts here-->
 
             <!-- Patient's name F M L-->
             <tr>
-            <td class="td1"><label for="Fname">First name:</label></td>
+            <td class="td1"><label for="fname">First name:</label></td>
             <td>
                 <input type="text"              
-                id="Fname"
+                id="fname"
+                name="fname"
                 maxlength="30"
                 title="please enter your first name"
                 required
-                placeholder="John"
+                placeholder="Arthur"
                 />  
             </td>
         </tr>
         <tr>
-              <td class="td1"<label for="Mname">Middle Initial:</label>
+              <td class="td1"<label for="mname">Middle Initial:</label>
             <td>
                 <input type="text"
-                 id="Mname"
+                 id="mname"
+                 name="mname"
                  maxlength="1"
                  title="Please enter your middle initial" 
                  placeholder="W"
@@ -73,11 +78,12 @@
             <td class="td1"><label for="lname">Last name:</label></td>
             <td>
                  <input type="text"
-                  id="lname"
+                   id="lname"
+                   name="lname"
                    maxlength="30"
                    title="Please enter your last name"
                    required
-                   placeholder="le"
+                   placeholder="Morgan"
                    />
             </td>
           </tr>
@@ -85,19 +91,19 @@
           <!--Gender or sex-->
 
            <tr>
-             <td class="td1"><label for="psex">Patient's Sex</label></td>
+             <td class="td1"><label for="patsex">Patient's Sex</label></td>
              <td>
                  <input type="radio"
                   id="s1"
                   name="sex"
-                  value="Male">
+                  value="Male"
                  />
                  Male
   
                 <input 
                 type="radio"
                 id="s2"
-                name="sex"
+                name="patsex"
                 value="Female"
                 />
                 Female
@@ -105,26 +111,27 @@
                 <input 
                 type="radio"
                 id="s3"
-                name="sex"
-                value="Other"> 
+                name="patsex"
+                value="Other" 
                 />
                 Other
              </td>
            </tr>
 
-          <!-- date of birth-->  
+          <!-- Date of birth-->  
 
           <tr>
              <td class="td1"<label for="dob">Date Of Birth</label></td>
           <td>
-          <input type="date"
+          <input 
+          type="date"
           id="dob"
           name="dob"
           />  
          </td>
       </tr>
 
-    <tr>  <td class="td1"><label for="ssn">Social Security:<label</td>
+    <tr>  <td class="td1"><label for="ssn">Social Security:</label></td>
         <td>
            <input 
             type="password"
@@ -134,18 +141,18 @@
               name="ssn"
               id="ssn"
               required
-             title="Please enter your social security number DO NOT ENTER YOUR REAL SSN"
+             title="Please enter your social security number"
              placeholder="123-12-1234"
               />
         </td>
     </tr>
       
       <tr>
-        <th colspan="4"<hr></th> <!-- This line allows better organization-->
+        <th colspan="4"<hr></th> <!-- Line Divider-->
       </tr>
           
       <tr>
-        <th colspan="4">Patient contact information</th>
+        <th colspan="4">Patient Contact Information</th>
       </tr>
       <!-- Address-->
 
@@ -251,15 +258,16 @@
   </tr>
 
   <tr>
-      <td class="td1"><label for="zip">ZIP Code:</label></td>
+      <td class="td1"><label for="zpcode">ZIP Code:</label></td>
          <td>
          <input type="text"
-          id="zipcode"
+          name="zpcode"
+          id="zpcode"
           maxlength="5"
           pattern="[0-9]{5}"
            title="please enter your zip code"
            required
-           placeholder="What ever zip code you want it to show"
+           placeholder="What ever zip code needed"
            /> 
          </td>
     </tr>
@@ -278,52 +286,143 @@
               </td>
           </tr>
 
+           <tr>
+        <td class="td1"><label for="phonenum">Phone Number:</label></td>
+            <td>
+               <input type="text"
+                 id="phonenum"
+                 name="phonenum"
+                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                 required
+                 maxlength="12"
+                 title="Please enter your email"
+                 placeholder="name@domain.tld"
+                 /> 
+              </td>
+          </tr>
 
-<br>
+          <tr>
+            <th colspan="4"><hr></th> <!-- this makes a line allowing it to be more organized-->
+          </tr>
 
-<br>
+          <!--Patient background-->
+            <tr>
+              <th colspan="4">Patients History</th> 
+           </tr>
+          
+          <tr>
+            <td class="td1"><label for="vac">Have you been vaccinated:</label></td>
+            <td>
+            <input type="radio"
+            id="va1"
+            name="vac"
+            value="Yes"
+             />
+            Yes
+            <input type="radio"
+            id="va1"
+            name="vac"
+            value="No"
+            />
+            No
+            </td>
+        </tr>
 
-<br>
+        <tr>
+            <td class="td1"><label for="ins">Do you have insurance:</label></td>
+            <td>
+            <input type="radio"
+            id="in1"
+            name="ins"
+            value="Yes"
+             />
+            Yes
+            <input type="radio"
+            id="in1"
+            name="ins"
+            value="No"
+            />
+            No
+            </td>
+        </tr>
+        
+        <tr>
+           <td class="td1"><label for="pat_hist">Have you ever been contracted with:</label></td>
+           <td>
+              
+            <input type="checkbox"id="option1"value="chickenpox"> 
+            <label for="chickenpox">Chicken Pox</label>
 
+            <input type="checkbox"id="option2"value="measles"> 
+            <label for="measles">Measles</label> 
 
+            <input type="checkbox"id="option3"value="Covid_19"> 
+            <label for="Covid_19">Covid-19</label> 
 
+            <input type="checkbox"id="option4"value="smallpox"> 
+            <label for="smallpox">Small Pox</label><br> 
 
+            <input type="checkbox"id="option5"value="tetanus"> 
+            <label for="tetanus">Tetanus</label>
 
-<br>
+            <input type="checkbox"id="option6"value="Other"> 
+            <label for="Other">Other</label>
+     </tr>
 
+      <tr>
+        <td class="td1" align="right">
+        <label for="notes">If you have chosen any of the given,<br> please explain:</label>
+        </td>
+        <td>
+          <textarea
+          rows="4"
+          cols="50"
+          maxlength="500"
+          id="notes"
+          name="notes"
+          title="please write a description of the symptoms you are experiencing"
+          placeholder="(Insert text here...)"
+          /></textarea>
+          <span id="description_text"></span>
+        </td>
+      </tr>
+
+      <!--Slider HTML-->
+       <tr>
+         <td class="td1"><label for="range">On a scale how good is your health?:</label></td>
+         <td>
+          <input 
+          type="range"
+          name="range"
+          id="range"
+          min="0"
+          max="10"
+          value="0"
+          />
+           <span id="range-slider"></span>
+         </td>
+       </tr>
+        <tr>
+          <th colspon="4"></th><!-- Webpage Splitter-->
+        </tr>
+         
+          
 <br><label for="summary">Summary:</label>  
+              
 <input type="text"id="summary"value="Summary"><br> 
 <h4>If you have been previously diagnosed with any of the following please check all that apply:</h4>
-<input type="checkbox"id="chickenpox"name="chickenp"value="chpo"> 
-<label for="chickenpox">Chicken Pox</label><br>
-<input type="checkbox"id="measles"name="measles"value="meas"> 
-<label for="measles">Measles</label><br> 
-<input type="checkbox"id="covid"name="covi"value="cov"> 
-<label for="covid">Covid-19</label><br> 
-<input type="checkbox"id="smallpox"name="smallp"value="smpo"> 
-<label for="smallpox">Small Pox</label><br> 
-<input type="checkbox"id="tetanus"name="tetanus"value="tet"> 
-<label for="tetanus">Tetanus</label><br>
 
 
-<label for="male">Male</label>
 
-<label for="female">female</label>
 
-<label for="other">Other</label>
-<br><p>Have you been vaccinated:</p>
-<input type="radio"id="Yes"name="option"value="Yes">
-<label for="Yes">Yes</label>
-<input type="radio"id="No"name="option"value="No">
-<label for="No">No</label><br>
-<br><p>Do you have insurance?:</p>
-<input type="radio"id="Yes"name="insurance"value="Yes">
-<label for="Yes">Yes</label>
-<input type="radio"id="No"name="insurance"value="No">
-<label for="No">No</label><br>
+
+
+
+
+
 <label for="urgency">On a scale how good is your health?:</label><br>  
 <div class="slidecontainer">
-<input type="range"min="1"max="100"value="50"class="slider"id="urgency"> 
+
 </div>
 <br><label for="userid">User ID:</label> 
 <input type="text"id="userid"name=user><br> 
