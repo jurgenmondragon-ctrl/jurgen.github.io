@@ -58,7 +58,7 @@ footer{
    position: flex;
    bottom: 0;
    width: 100%;
-   background-color: rgb(250,0,0)
+   background-color: rgb(250,0,0);
    height: 3.0 rem;
 }
 
